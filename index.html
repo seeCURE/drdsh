@@ -3,20 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clickable Link with Animation</title>
+<title>Clickable Link with Cool Animations</title>
 <style>
-  /* Define animation keyframes */
-  @keyframes linkAnimation {
+  /* Define animation keyframes for scale effect */
+  @keyframes scaleAnimation {
     0% { transform: scale(1); }
     50% { transform: scale(1.2); }
     100% { transform: scale(1); }
   }
 
-  /* Apply animation to link */
+  /* Define animation keyframes for color change */
+  @keyframes colorAnimation {
+    0% { color: blue; }
+    50% { color: purple; }
+    100% { color: blue; }
+  }
+
+  /* Define animation keyframes for rotation */
+  @keyframes rotateAnimation {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Apply animations to link */
   .animated-link {
     display: inline-block;
-    animation: linkAnimation 1s infinite;
-    color: blue; /* Change link color if needed */
+    animation: scaleAnimation 1s infinite alternate, colorAnimation 2s infinite alternate, rotateAnimation 3s infinite linear;
     text-decoration: underline; /* Add underline to the link */
   }
 </style>
